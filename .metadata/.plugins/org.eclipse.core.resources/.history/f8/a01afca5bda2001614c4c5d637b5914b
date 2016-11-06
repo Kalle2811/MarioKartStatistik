@@ -1,0 +1,15 @@
+package org.pascal.MarioKartStatistik;
+
+import javax.swing.JFrame;
+
+public class Frame extends JFrame {
+
+	public Frame() {
+		setVisible(true);
+		setTitle("Statistik");
+		setSize(600, 400);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}

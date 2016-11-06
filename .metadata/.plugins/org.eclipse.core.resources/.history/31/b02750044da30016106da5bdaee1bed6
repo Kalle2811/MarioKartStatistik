@@ -1,0 +1,35 @@
+package org.pascal.MarioKartStatistik;
+
+import java.awt.TextField;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Frame extends JFrame {
+
+	JLabel label;
+	JLabel anzahlSpieler;
+	TextField eingabeAnzahlSpieler;
+	JLabel spieler1;
+	JLabel spieler2;
+
+	public Frame() {
+		setVisible(true);
+		setTitle("Statistik");
+		setSize(600, 400);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(null);
+
+		anzahlSpieler = new JLabel("Bitte geben Sie die Anzahl der Spieler an.");
+		anzahlSpieler.setBounds(175, 50, 500, 20);
+		add(anzahlSpieler);
+		eingabeAnzahlSpieler = new TextField();
+		eingabeAnzahlSpieler.setBounds(250, 75, 100, 25);
+		add(eingabeAnzahlSpieler);
+		// label = new JLabel("Bitte geben Sie die Namen der Spieler ein!");
+		// label.setBounds(175, 0, 500, 20);
+		// add(label);
+	}
+}

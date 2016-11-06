@@ -1,0 +1,26 @@
+package org.pascal.MarioKartStatistik;
+
+import java.awt.Label;
+import java.awt.TextField;
+
+import javax.swing.JFrame;
+
+public class Gui {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame frame;
+		Label label;
+		TextField name1;
+		frame = new JFrame("Statistik");
+		frame.setSize(400, 200);
+		frame.setLocationRelativeTo(null);
+
+		label = new Label("Bitte geben Sie die Namen der Spieler ein.");
+		label.setVisible(true);
+
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}
