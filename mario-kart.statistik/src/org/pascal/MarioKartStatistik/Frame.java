@@ -14,12 +14,13 @@ public class Frame extends JFrame {
 	JLabel label;
 	JLabel anzahlSpieler;
 	JComboBox eingabeAnzahlSpieler;
-	// TextField eingabeAnzahlSpieler;
 	JButton anzahlButton;
 
 	int anzahlLabel = 0;
-	String[] anzahlEingabe = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
 
+	int anzahl;
+	String[] anzahlEingabe = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+	String eingabeAnzahl;
 	JLabel spieler1;
 	JLabel spieler2;
 
@@ -39,26 +40,29 @@ public class Frame extends JFrame {
 		anzahlSpieler.setFont(schrift);
 		add(anzahlSpieler);
 
-		eingabeAnzahlSpieler = new JComboBox<>();
+		eingabeAnzahlSpieler = new JComboBox<>(anzahlEingabe);
 		eingabeAnzahlSpieler.setBounds(250, 80, 100, 25);
+		eingabeAnzahlSpieler.setVisible(true);
 		add(eingabeAnzahlSpieler);
 
 		anzahlButton = new JButton("OK!");
 		anzahlButton.setBounds(250, 110, 100, 25);
+		add(anzahlButton);
 		anzahlButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				anzahlEingabe = eingabeAnzahlSpieler.getText();
-				System.out.println(anzahlEingabe);
+				eingabeAnzahl = (String) eingabeAnzahlSpieler.getSelectedItem();
+				anzahl = Integer.valueOf(eingabeAnzahl);
+				System.out.println(anzahl);
+
+				if (anzahlLabel < anzahl) {
+					spieler1 = new JLabel();
+					spieler1.setBounds(0, 100, 500, 20);
+					add(spieler1);
+					anzahlLabel++;
+				}
+
 			}
 		});
-		add(anzahlButton);
-		int anzahl = Integer.valueOf(anzahlEingabe);
-		while (anzahl < anzahlLabel) {
-			label = new JLabel("Bitte geben Sie die Namen der Spieler ein!");
-			label.setBounds(175, 0, 500, 20);
-			add(label);
-			anzahl++;
-		}
 
 	}
 }
